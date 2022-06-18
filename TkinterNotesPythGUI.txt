@@ -1,0 +1,43 @@
+Tkinter notes:
+
+- First create window
+- Buttons, labels, text entries go on window in (column,row) entry on grid
+	- (column,row) represent an array of objects
+	- ex. Label created at position (0,0), text entry created at position (1,0):
+		lbl = tk.Label(window, text="Hello", font=("Ariel Bold", 50))
+		lbl.grid(column=0, row=0)
+
+		txt = tk.Entry(window,width=10)
+		txt.grid(column=1, row=0)
+
+General framework:
+- Create window:
+	window = TK()
+	window.title("Sudoku")
+- Create label
+
+- Create text entry box
+
+- add submit button
+
+- create another label
+
+- create a text box
+
+- dictionary
+
+##### run the main loop
+	window.mainloop()
+
+
+Placing widgets:
+- Pack: "just shoving it in there in the first available spot"
+	- myLabel = Label(root, text="hello world!")
+	- myLabel.pack()
+- Grid: Position with x-y coords relative to top left 
+
+Buttons:
+- command
+
+Entry:
+- text box to type in 

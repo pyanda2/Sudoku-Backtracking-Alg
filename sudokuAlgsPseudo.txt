@@ -1,0 +1,13 @@
+SolveBAcktrackingAlgo(Board bo):
+    empty_val_pos = empty_value(bo) # O(n^2) to find first empty val
+    if empty_val_pos == None:
+        return True # board is full, no empty val
+    else:
+        for i in range(1, 10): # O(n): tests each number for a box
+            if valid_input(bo, i, empty_val_pos): # O(n): n iterations, checking row, column and 3x3 box simultaneously
+                bo[empty_val_pos[0]][empty_val_pos[1]] = i
+
+                if solveBacktrackingAlg(bo):
+                    return True
+                bo[empty_val_pos[0]][empty_val_pos[1]] = 0
+        return False

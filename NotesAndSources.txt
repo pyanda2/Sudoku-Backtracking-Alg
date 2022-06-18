@@ -1,0 +1,28 @@
+Sudoku notes
+
+Functionality:
+- User can play sudoku and click to see if their board is correct.
+- "Reveal solution" button. Uses backtracking algo to produce board (maybe, just maybe animate 
+	the backtracking solution if I have the time)
+- Timer
+
+Playing sudoku:
+- Barebones method: tkinter "entry" object, just type number in each box
+- TechWithTim method (I think): press box, another small box pops up over the board with 
+	all possible values to input.
+	- subscript functionality: allows for player to put potential numbers in a box for reference
+    - Erase button (for each box)
+    
+
+
+
+Sources: 
+https://www.youtube.com/watch?v=eqUwSA0xI-s // tech with tim,
+    original inspiration and backtracking code
+
+https://www.youtube.com/watch?v=xx0qmpuA-vM // tkinter gui guide
+
+// the source for computer vision detect board, 
+    process board, and output soln
+
+

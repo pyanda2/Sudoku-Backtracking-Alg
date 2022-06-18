@@ -29,6 +29,7 @@ def printBoard(bo):
         if i != 0 and i != 8 and i % 3 == 2:
             print('---------------------')
 def empty_value(bo):
+    # does row traversal (left to right) and searches for first empty value
     for i in range(len(bo)):
         for j in range(len(bo[i])):
             if bo[i][j] == 0:
@@ -36,13 +37,13 @@ def empty_value(bo):
     return None
 def valid_input(bo, val, pos_tup):
 
-
+    # pos_tup = [row,col] aka [y,x] coords with origin at top left
     # figure out which 3 x 3 square it's in:
     sq_row_start = pos_tup[0] // 3 * 3
     sq_col_start = pos_tup[1] // 3 * 3
 
     # check each column value in row AND each row value in column AND each val in local 3 x 3 square
-    for i in range(len(bo)):
+    for i in range(len(bo)): # n iterations, constant work per iteration = O(n)
         sq_row = sq_row_start + i // 3
         sq_col = sq_col_start + i % 3
         if val == bo[pos_tup[0]][i] and i != pos_tup[1]:
@@ -66,7 +67,8 @@ def solveBacktrackingAlg(bo):
                     return True
                 bo[empty_val_pos[0]][empty_val_pos[1]] = 0
         return False
-printBoard(invalidBoard)
-print(solveBacktrackingAlg(invalidBoard))
+printBoard(board)
+print(solveBacktrackingAlg(board))
 print('--------------------------------------------')
-printBoard(invalidBoard)
+printBoard(board)
+
